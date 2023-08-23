@@ -11,7 +11,7 @@ html, body {
 }
 
 .hero{
-  height: 100vh;
+  height: 105vh;
   color: #F7F7F7;
   background-color: #999D9E;
   background-image: url('/public/person.jpg');
@@ -82,7 +82,8 @@ nav ul{
 }
 
 .heroName{
-  font-size: 13vw;
+  font-size: 12vw;
   white-space: nowrap;
   margin-top: 80px;
+  position: absolute;
 }
