@@ -71,44 +71,17 @@ const LoopingElement = ({ children, currentTranslation, speed }) => {
   const animate = () => {
     direction ? goForward() : goBackward();
     lerpFunc(lerp.current, lerp.target, lerp.factor);
-
     elementRef.current.style.transform = `translateX(${lerp.current}%)`;
-
     window.requestAnimationFrame(animate);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-    // events();
     animate();
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-
-    // return () => {
-    //   window.removeEventListener("scroll", events);
-    // };
   }, [prevScrollY]);
-
-  // const handleScroll = () => {
-  //   const currentScrollY = window.scrollY;
-
-  //   if (currentScrollY > prevScrollY) {
-  //     console.log("Scrolling down");
-  //   } else if (currentScrollY < prevScrollY) {
-  //     console.log("Scrolling up");
-  //   }
-
-  //   setPrevScrollY(currentScrollY);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [prevScrollY]);
 
   return (
     <div className="looping-element" ref={elementRef}>
