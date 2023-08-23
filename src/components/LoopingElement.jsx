@@ -11,7 +11,7 @@ const LoopingElement = ({ children, currentTranslation, speed }) => {
   const lerp = {
     current: currentTranslation,
     target: currentTranslation,
-    factor: 0.8,
+    factor: 0.1,
   };
 
   //   const events = () => {

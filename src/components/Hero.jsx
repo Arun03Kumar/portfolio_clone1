@@ -54,7 +54,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <LoopingElement currentTranslation={0} speed={0.02}>
+      <LoopingElement currentTranslation={0} speed={0.1}>
         <div
           className="heroName"
           // style={{ transform: `translateX(${position}px)` }}
@@ -62,7 +62,7 @@ const Hero = () => {
           <span>- Dennis Snellenburg -</span>
         </div>
       </LoopingElement>
-      <LoopingElement currentTranslation={-110} speed={0.02}>
+      <LoopingElement currentTranslation={-110} speed={0.1}>
         <div
           className="heroName"
           // style={{ transform: `translateX(${position}px)` }}

@@ -1,16 +1,37 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
   font-family: 'Neue Montreal';
 }
 
-.hero{
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.hero {
   height: 105vh;
   color: #F7F7F7;
   background-color: #999D9E;
@@ -29,19 +50,19 @@ html, body {
   letter-spacing: .8px;
 }
 
-nav ul{
+nav ul {
   display: flex;
   list-style: none;
   gap: 45px;
 }
 
-.heroCenter{
+.heroCenter {
   display: flex;
   justify-content: space-between;
   margin-top: 150px;
 }
 
-.heroCenterleftDiv{
+.heroCenterleftDiv {
   display: flex;
   align-items: center;
   background-color: #1C1D20;
@@ -50,14 +71,14 @@ nav ul{
   margin-top: 100px;
 }
 
-.centerLeftText{
+.centerLeftText {
   color: white;
   width: 140px;
   padding: 20px 10px 20px 40px;
   font-size: 1.2vw;
 }
 
-.centerLeftIcon{
+.centerLeftIcon {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -70,20 +91,83 @@ nav ul{
   font-size: 2.3vw;
 }
 
-.rightArrow{
+.rightArrow {
   /* transform: rotate(-45deg); */
   display: inline-block;
 }
 
-.rightText{
+.rightText {
   margin-top: 70px;
   line-height: 6vh;
   font-weight: 500;
 }
 
-.heroName{
+.heroName {
   font-size: 12vw;
   white-space: nowrap;
   margin-top: 80px;
   position: absolute;
+}
+
+.downHeroMain {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.downHeroChild {
+  display: flex;
+  margin: 12vw 16vw 10px 16vw;
+}
+
+.downHeroChileLeft {
+  flex: 2.3;
+  /* padding-right: 40px; */
+  /* margin-right: 1vw; */
+}
+
+.downHeroChileRight {
+  flex: 0.9;
+  padding-left: 7vw;
+}
+
+.downHeroChileLeft p:nth-child(1) {
+  font-size: 2.2vw;
+  color: #29292b;
+  letter-spacing: .01vw;
+  line-height: 3vw;
+}
+
+.downHeroChileLeft p:nth-child(2) {
+  font-size: .7vw;
+  color: #29292b;
+  opacity: 0.5;
+  margin-top: 10vw;
+  font-weight: 600;
+  letter-spacing: .01vw;
+}
+
+.downHeroChileRight>p {
+  font-size: 1.2vw;
+  line-height: 1.8vw;
+  margin-top: 10px;
+  color: #464749;
+}
+
+.aboutBtn {
+  width: 12vw;
+  height: 12vw;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vw;
+  margin-left: 8px;
+}
+
+.aboutBtn>p {
+  color: white;
+  font-size: 1.2vw;
 }
