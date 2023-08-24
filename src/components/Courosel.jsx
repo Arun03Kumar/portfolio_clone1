@@ -23,7 +23,7 @@ const Courosel = () => {
                 key={i}
                 className="box"
                 style={{
-                  backgroundImage: `url('/public/${item}')`,
+                  backgroundImage: `url('/${item}')`,
                   backgroundSize: "contain",
                 }}
               ></div>
@@ -47,7 +47,7 @@ const Courosel = () => {
                   muted="muted"
                   volume="0"
                 >
-                  <source src={`/public/${item}`} type="video/mp4" />
+                  <source src={`/${item}`} type="video/mp4" />
                 </video>
               </div>
             );
@@ -61,7 +61,7 @@ const Courosel = () => {
                 key={i}
                 className="box"
                 style={{
-                  backgroundImage: `url('/public/${item}')`,
+                  backgroundImage: `url('/${item}')`,
                   backgroundSize: "contain",
                 }}
               ></div>
@@ -85,7 +85,7 @@ const Courosel = () => {
                   muted="muted"
                   volume="0"
                 >
-                  <source src={`/public/${item}`} type="video/mp4" />
+                  <source src={`/${item}`} type="video/mp4" />
                 </video>
               </div>
             );

@@ -1,5 +1,6 @@
 import React from "react";
 import { IoArrowForward } from "react-icons/io5";
+import Magnet from "./Magnet";
 
 const Connect = () => {
   return (
@@ -38,7 +39,9 @@ const Connect = () => {
             marginLeft: "-80px",
           }}
         >
-          <div className="touchBtn">Get in Touch</div>
+          <Magnet>
+            <div className="touchBtn">Get in Touch</div>
+          </Magnet>
         </div>
         <div className="info">
           <p className="infoPhone">arun0315as@gmail.com</p>

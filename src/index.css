@@ -165,9 +165,14 @@ nav ul {
   align-items: center;
   margin-top: 5vw;
   margin-left: 8px;
+  transition: background-color .8s ease;
 }
 
-.aboutBtn>p {
+.aboutBtn:hover {
+  background-color: #455CE9;
+}
+
+.aboutBtn p {
   color: white;
   font-size: 1.2vw;
 }
@@ -206,6 +211,11 @@ nav ul {
   margin-top: 100px;
 }
 
+.moreBtn:hover {
+  background-color: #455CE9;
+  color: white;
+}
+
 .couroselParent {
   margin-top: 9vw;
   width: fit-content;
@@ -235,7 +245,6 @@ nav ul {
 .innerBox {
   height: 100%;
   width: 100%;
-  background-color: red;
 }
 
 footer {
