@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import { motion } from "framer-motion";
 import "../index.css";
 import { IoArrowForward } from "react-icons/io5";
@@ -24,6 +25,42 @@ const Hero = () => {
   //     cancelAnimationFrame(animationId);
   //   };
   // }, []);
+  const firstText = useRef(null);
+  const secondText = useRef(null);
+  const slider = useRef(null);
+  let xPercent = 0;
+  let direction = 1;
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(slider.current, {
+      scrollTrigger: {
+        trigger: document.documentElement,
+        scrub: 0.25,
+        start: 0,
+        end: window.innerHeight,
+        onUpdate: (e) => (direction = e.direction * -1),
+      },
+      x: "-500px",
+    });
+    requestAnimationFrame(animate);
+  }, []);
+
+  useEffect(() => {
+    requestAnimationFrame(animate);
+  });
+  const animate = () => {
+    if (xPercent < -104) {
+      xPercent = 0;
+    } else if (xPercent > 0) {
+      xPercent = -104;
+    }
+    gsap.set(firstText.current, { xPercent: xPercent });
+    gsap.set(secondText.current, { xPercent: xPercent });
+    xPercent += 0.05 * direction;
+    requestAnimationFrame(animate);
+  };
+  // animate()
   return (
     <div className="hero">
       <nav>
@@ -54,22 +91,22 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <LoopingElement currentTranslation={0} speed={0.1}>
+      {/* <LoopingElement currentTranslation={0} speed={0.1}> */}
+      <div className="slider" ref={slider}>
         <div
           className="heroName"
           // style={{ transform: `translateX(${position}px)` }}
+          ref={firstText}
         >
-          <span>- Dennis Snellenburg -</span>
+          Dennis Snellenburg -
         </div>
-      </LoopingElement>
-      <LoopingElement currentTranslation={-110} speed={0.1}>
-        <div
-          className="heroName"
-          // style={{ transform: `translateX(${position}px)` }}
-        >
-          <span> - Dennis Snellenburg -</span>
+        {/* </LoopingElement>
+      <LoopingElement currentTranslation={-110} speed={0.1}> */}
+        <div className="heroName" style={{ left: "110%" }} ref={secondText}>
+          Dennis Snellenburg -
         </div>
-      </LoopingElement>
+      </div>
+      {/* </LoopingElement> */}
     </div>
   );
 };
